@@ -1,0 +1,11 @@
+version: "2"
+sql:
+  - engine: "sqlite"
+    queries: "module/users/db/sql"
+    schema: "migrations"
+    gen:
+      go:
+        package: "queries"
+        out: "module/users/db"
+        emit_json_tags: true
+        emit_interface: true

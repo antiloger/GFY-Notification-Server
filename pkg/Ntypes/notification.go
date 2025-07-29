@@ -16,3 +16,12 @@ type TagetSet struct {
 	Categories []string `json:"categories"`
 	ClientIDs  []string `json:"client_ids"`
 }
+
+type SSENotifyPayload struct{}
+
+type NotifyACKPayload struct {
+	Queue      string
+	MsgID      string `json:"msg_id"`
+	Akg        bool   `json:"akg"`   // true or false
+	RetryCount int    `json:"retry"` // Number of retries
+}
